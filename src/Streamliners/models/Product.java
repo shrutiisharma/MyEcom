@@ -1,41 +1,57 @@
 package Streamliners.models;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Product {
+
+    //common
     public String name, imageURL;
+    public int type;
 
-    //default constructor
-    public Product() {
-    }
+    //WBP
+    float minQuantity, pricePerKg;
 
-    //parameterized constructor
-    public Product(String name, String imageURL) {
+    //VBP
+    public List<Variant> variants;
+
+    //for WBP
+    public Product(String name, String imageURL, float pricePerKg, float minQuantity) {
+        type = ProductType.TYPE_WB;
         this.name = name;
         this.imageURL = imageURL;
+        this.pricePerKg = pricePerKg;
+        this.minQuantity = minQuantity;
     }
 
-    //Overrides toString() method of the Object Class
+    //for VBP
+    public Product(String name, String imageURL, List<Variant> variants) {
+        type = ProductType.TYPE_VB;
+        this.name = name;
+        this.imageURL = imageURL;
+        this.variants = variants;
+    }
+
     @Override
     public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", imageURL='" + imageURL + '\'' +
-                '}';
-    }
+        StringBuilder builder = new StringBuilder();
 
-    //Overrides equals() method of the Object Class
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Objects.equals(name, product.name) && Objects.equals(imageURL, product.imageURL);
-    }
+        if (type == ProductType.TYPE_WB)
+            builder.append("WB {");
+        else
+            builder.append("VB {");
 
-    //Overrides hashCode() method of the Object Class
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, imageURL);
+        builder.append("name = ").append(name);
+
+        if (type == ProductType.TYPE_WB) {
+            builder.append(", minQty = ").append(minQuantity);
+            builder.append(", pricePerKg = ").append(pricePerKg);
+        }
+        else
+            builder.append(", variants = ").append(variants);
+
+        builder.append(" } ");
+
+        return builder.toString();
     }
 }
