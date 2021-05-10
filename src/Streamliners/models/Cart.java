@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Cart {
 
-    HashMap<String, CartItem> cartItems = new HashMap<>();
+    public HashMap<String, CartItem> cartItems = new HashMap<>();
     float total, noOfItems;
 
 
@@ -22,7 +22,7 @@ public class Cart {
 
         //if item does not exist in the cart, i.e add for the first time
         else {
-            CartItem item = new CartItem(product.name, product.pricePerKg, qty);
+            CartItem item = new CartItem(product.name, product.pricePerKg, qty, product.type);
             cartItems.put(product.name, item);
 
             noOfItems++;
@@ -47,7 +47,7 @@ public class Cart {
 
         //if item does not exist in the cart, i.e add for the first time
         else {
-            CartItem item = new CartItem(product.name, variant.price, 1);
+            CartItem item = new CartItem(product.name, variant.price, 1, product.type);
             cartItems.put(key, item);
         }
 
@@ -98,7 +98,7 @@ public class Cart {
 
 
     //to decrement variant
-    public void decrement(Product product, Variant variant){
+    public void decrementVBP(Product product, Variant variant){
 
         String key = product.name + " " + variant.name;
 
@@ -118,7 +118,7 @@ public class Cart {
     @Override
     public String toString() {
 
-        return "Cart: \n" +
+        return "\u001B[33m" + "My Cart: \n" + "\u001B[0m" +
                 cartItems.values() +
                 String.format("\nTotal = ₹ %.2f \nNo. of Items = %.2f\n", total, noOfItems);
     }

@@ -1,7 +1,6 @@
 package Streamliners.models;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Product {
 
@@ -34,24 +33,11 @@ public class Product {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
 
         if (type == ProductType.TYPE_WB)
-            builder.append("WB {");
+            return name + "     ₹ " + pricePerKg + "/kg";
         else
-            builder.append("VB {");
+            return name + "     " + variants;
 
-        builder.append("name = ").append(name);
-
-        if (type == ProductType.TYPE_WB) {
-            builder.append(", minQty = ").append(minQuantity);
-            builder.append(", pricePerKg = ").append(pricePerKg);
-        }
-        else
-            builder.append(", variants = ").append(variants);
-
-        builder.append(" } ");
-
-        return builder.toString();
     }
 }

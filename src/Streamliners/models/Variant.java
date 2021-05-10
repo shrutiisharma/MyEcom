@@ -11,6 +11,6 @@ public class Variant {
 
     @Override
     public String toString() {
-        return String.format("%s  Rs. %.2f", name, price);
+        return String.format("%s  ₹%.2f", name, price);
     }
 }

@@ -4,11 +4,13 @@ public class CartItem {
 
     String name;
     float unitPrice, qty;
+    public int type;
 
-    public CartItem(String name, float unitPrice, float qty) {
+    public CartItem(String name, float unitPrice, float qty, int type) {
         this.name = name;
         this.unitPrice = unitPrice;
         this.qty = qty;
+        this.type = type;
     }
 
     float cost(){
@@ -17,6 +19,6 @@ public class CartItem {
 
     @Override
     public String toString() {
-        return "\n" + name + String.format("     ( %.2f X %.2f = ₹ %.2f )", unitPrice, qty, cost());
+        return "\n" + name + String.format("     ( ₹ %.2f X %.2f = ₹ %.2f )", unitPrice, qty, cost());
     }
 }
