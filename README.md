@@ -137,4 +137,4 @@ Tutorial Videos for the project: [NAAD2.0 - YouTube.](https://www.youtube.com/p
 
 **Exit the Application**
 
-![exit](https://user-images.githubusercontent.com/72591283/117663872-c1e75d00-b1be-11eb-8c79-a9c9e0d3e6ff.png)
+<img src="https://user-images.githubusercontent.com/72591283/117663872-c1e75d00-b1be-11eb-8c79-a9c9e0d3e6ff.png" title="" alt="exit" width="437">
