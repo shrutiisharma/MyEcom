@@ -19,17 +19,27 @@ Tutorial Videos for the project: [NAAD2.0 - YouTube.](https://www.youtube.com/pl
 - View all products. 
 
 - For the ADMIN
+  
   1:  Add a product.
+  
   2:  Edit a product.
+  
   3:  Delete a product.
 
 - For the CUSTOMER
+  
   1:  Add a product to the cart.
+  
   2:  Edit a product from the cart.
+  
   3:  Remove a product from the cart.
+  
   4:  View the cart.
+  
   5:  Place the order.
+  
   6:  Cancel the order.
+  
   7:  Exit the application.
 
 #### This is how it looks like!
